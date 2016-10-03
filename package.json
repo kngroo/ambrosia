@@ -1,10 +1,10 @@
 {
-  "name": "webpack-heroku-boilerplate",
+  "name": "ambrosia-bakery-sf",
   "version": "1.0.0",
-  "description": "Simplest Heroku starter kit for React apps.",
-  "main": "./src/entry.js",
-  "homepage": "https://github.com/wallacyyy/webpack-heroku",
-  "author": "Leonardo Couto",
+  "description": "web page for Ambrosia Bakery in San Francisco",
+  "main": "./app.js",
+  "homepage": "http://ambrosiabakerysf.com",
+  "author": "Josh Kang",
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wallacyyy/webpack-heroku.git"
+    "url": "git+https://github.com/kngroo/ambrosia.git"
   },
   "keywords": [
     "react",
