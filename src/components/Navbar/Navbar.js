@@ -15,7 +15,10 @@ export default class Navbar extends Component {
                 <IndexLink className="navbar-link" to="/">Home</IndexLink>
               </li>
               <li className="navbar-item">
-                <Link className="navbar-link" to="/cakes">Cakes</Link>
+                <Link className="navbar-link" to="/menu">Menu</Link>
+              </li>
+              <li className="navbar-item">
+                <Link className="navbar-link" to="/contact">Contact</Link>
               </li>
               <li className="navbar-item">
                 <Link className="navbar-link" to="/about">About Us</Link>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 require('./about.scss')
 
-export default class Home extends Component {
+export default class About extends Component {
   constructor(props) {
     super(props)
   }
