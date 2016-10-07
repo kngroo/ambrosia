@@ -15,9 +15,9 @@ export default class Contact extends Component {
         </div>
         <div className="row">
           <h4 className="columns twelve">Hours</h4>
-          <p>Monday - Friday 6am to 6pm</p>
-          <p>Saturday - 7am to 6pm</p>
-          <p>Sunday - 8am to 2pm</p>
+          <p>M-F 6am - 6pm</p>
+          <p>Sat 7am - 6pm</p>
+          <p>Sun 8am - 2pm</p>
         </div>
       </section>
     )
