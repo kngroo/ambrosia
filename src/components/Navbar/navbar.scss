@@ -52,3 +52,12 @@
     width: 85%;
   }
 }
+
+@media (min-width: 550px) {
+  .has-docked-nav .navbar {
+    .container {
+      width: 80%;
+    }
+  }
+}
+

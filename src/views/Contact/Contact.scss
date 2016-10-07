@@ -1,7 +1,15 @@
 .contact-container {
   margin-top: 2rem;
+  text-align: center;
 }
 
 .map {
+  background-image: url('/public/spinner.gif');
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-color: white;
   border: 0;
 }
+
