@@ -11,7 +11,7 @@ export default class Menu extends Component {
     return (
       <section className="menu-container">
         <div>
-          <img src="/public/croissant.jpg"></img>
+          <img src="/public/croissant.png"></img>
           <h4>Pastries</h4>
           <div className="row">
             <div className="columns three">
@@ -125,7 +125,7 @@ export default class Menu extends Component {
           </div>
         </div>
         <div>
-          <img src="/public/tiramisu.jpg"></img>
+          <img src="/public/tiramisu.png"></img>
           <h4>Cakes</h4>
           <div className="row">
             <div className="columns four">
