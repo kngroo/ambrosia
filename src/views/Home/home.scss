@@ -3,12 +3,28 @@
   text-align: center;
 }
 
-.tiramisu {
-  width: 40%;
-  margin: 1rem;
-  // border-radius: 15rem;
+.description {
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 100%;
 }
 
 .fantasia {
-  width: 100%;
+  position: relative;
+  width: 100% !important;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
 }
+
+@media (min-width: 550px) {
+  .description {
+    width: 80%;
+  }
+  
+  .fantasia {
+    width: 80% !important;
+  }
+}
+
+

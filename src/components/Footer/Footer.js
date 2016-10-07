@@ -6,7 +6,12 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <p>footer content</p>
+        <a href="mailto:ambrosiabakerysf@gmail.com">Ambrosia Bakery</a>
+        <address>
+          2605 Ocean Avenue<br />
+          San Francisco, CA<br />
+          94132
+        </address>
       </footer>    
     )
   }

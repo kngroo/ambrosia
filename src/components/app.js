@@ -31,6 +31,7 @@ export default class App extends Component {
         <Header/>
         <Navbar/>
         {this.props.children}
+        <Footer/>
       </div>
     )
   }
