@@ -15,14 +15,10 @@ if (process.env.NODE_ENV !== 'production') {
     publicPath: config.output.publicPath,
     index: 'index.html'
   }))
-
-  const path = require('path')
-  
-  const indexPath = path.join(__dirname, 'public', 'index.html')
-
-  app.get('*', function (_, res) { res.sendFile(indexPath) })
-
 }
 
-app.listen(port)
-console.log(`Listening at http://localhost:${port}`)
+app.listen(port, () => {
+  console.log('NODE_ENV:', process.env.NODE_ENV);
+  console.log(`Listening at http://localhost:${port}`)
+});
+

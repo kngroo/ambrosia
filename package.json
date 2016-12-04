@@ -7,8 +7,11 @@
   "author": "Josh Kang",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
-    "start": "node app.js"
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
+    "build:server": "NODE_ENV=production webpack --config ./webpack.server.config.js --progress --colors",
+    "start": "node app.js",
+    "start:prod": "NODE_ENV=production node app.js"
   },
   "repository": {
     "type": "git",
