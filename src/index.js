@@ -8,7 +8,7 @@ import Home from './views/Home/Home'
 import Menu from './views/Menu/Menu'
 
 require('normalize.css')
-require('skeleton-css')
+require('skeleton-css-webpack')
 
 render(<App />, document.getElementById('main'))
 
