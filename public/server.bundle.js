@@ -50,21 +50,34 @@
 	var express = __webpack_require__(2);
 
 	module.exports = {
-	  app: function app() {
-	    var app = express();
-	    var indexPath = path.join(__dirname, 'public', 'index.html');
-	    var publicPath = express.static(path.join(__dirname, 'public'));
+			app: function app() {
+					var app = express();
 
-	    app.use('/public', publicPath);
-	    app.get('*', function (_, res) {
-	      res.sendFile(indexPath);
-	    });
-	    app.get('/', function (_, res) {
-	      res.sendFile(indexPath);
-	    });
+					if (process.env.NODE_ENV !== 'production') {
+							var webpack = __webpack_require__(3);
+							var webpackDevMiddleware = __webpack_require__(4);
+							var webpackHotMiddleware = __webpack_require__(5);
+							var config = __webpack_require__(6);
+							var compiler = webpack(config);
 
-	    return app;
-	  }
+							app.use(webpackDevMiddleware(compiler, {
+									noInfo: true,
+									publicPath: config.output.publicPath
+							}));
+
+							app.use(webpackHotMiddleware(compiler));
+					}
+
+					var indexPath = path.join(__dirname, 'public', 'index.html');
+					var publicPath = express.static(path.join(__dirname, 'public'));
+
+					app.use('/public', publicPath);
+					app.get('*', function (_, res) {
+							res.sendFile(indexPath);
+					});
+
+					return app;
+			}
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, ""))
 
@@ -79,6 +92,61 @@
 /***/ function(module, exports) {
 
 	module.exports = require("express");
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	module.exports = require("webpack");
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = require("webpack-dev-middleware");
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = require("webpack-hot-middleware");
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';
+
+	var path = __webpack_require__(1);
+	var webpack = __webpack_require__(3);
+
+	module.exports = {
+	  devtool: 'eval',
+
+	  entry: ['webpack-hot-middleware/client', './src/index'],
+
+	  output: {
+	    path: path.join(__dirname, 'public'),
+	    filename: 'bundle.js',
+	    publicPath: '/public/'
+	  },
+
+	  plugins: [new webpack.optimize.OccurenceOrderPlugin(), new webpack.HotModuleReplacementPlugin(), new webpack.NoErrorsPlugin()],
+
+	  module: {
+	    loaders: [{ test: /\.js?$/,
+	      loader: 'babel',
+	      include: path.join(__dirname, 'src')
+	    }, { test: /\.scss?$/,
+	      loader: 'style!css!sass' },
+	    // include: path.join(__dirname, 'src', 'styles') },
+	    { test: /\.css?$/,
+	      loader: 'style!css' }, { test: /\.png$/,
+	      loader: 'file' }, { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+	      loader: 'file' }]
+	  }
+	};
+	/* WEBPACK VAR INJECTION */}.call(exports, ""))
 
 /***/ }
 /******/ ]);
