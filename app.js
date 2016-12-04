@@ -1,5 +1,5 @@
 const Server = require('./server.js')
-const port = (process.env.PORT || 8080)
+const port = (process.env.PORT || 5000)
 const app = Server.app()
 
 if (process.env.NODE_ENV !== 'production') {
@@ -12,8 +12,16 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(webpackHotMiddleware(compiler))
   app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
-    publicPath: config.output.publicPath
+    publicPath: config.output.publicPath,
+    index: 'index.html'
   }))
+
+  const path = require('path')
+  
+  const indexPath = path.join(__dirname, 'public', 'index.html')
+
+  app.get('*', function (_, res) { res.sendFile(indexPath) })
+
 }
 
 app.listen(port)
