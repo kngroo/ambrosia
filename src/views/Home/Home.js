@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import fantasia from '../../static/images/cakes/fantasia.png'
 
 require('./home.scss')
 
@@ -10,7 +11,7 @@ export default class Home extends Component {
   render() {
     return (
       <section className="home-container">
-        <img className="fantasia" src="/public/fantasia.png"></img>
+        <img className="fantasia" src={fantasia} />
         <div className="description">
           <p>
             We’re a bright and community-oriented bakery serving cakes, pastries, cookies and sandwiches.  You’ll be sure to find something to satisfy your hunger pangs or sweet tooth!

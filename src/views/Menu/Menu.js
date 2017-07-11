@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import croissant from '../../static/images/cakes/croissant.png'
+import tiramisu from '../../static/images/cakes/tiramisu.png'
+
 
 require('./menu.scss')
 
@@ -11,7 +14,7 @@ export default class Menu extends Component {
     return (
       <section className="menu-container">
         <div className="submenu">
-          <img className="main-img" src="/public/tiramisu.png"></img>
+          <img className="main-img" src={tiramisu}></img>
           <h4>Cakes</h4>
           <div className="description">
             <p>Ambrosia Bakery excels at creating unique and delicious desserts. Whether you’re looking for a cake, tart or specialty dessert, you're sure to be delighted with our selection. The style and presentation of these beautiful and flavorful products will vary throughout the year to complement the seasons, using the best possible ingredients.
@@ -51,7 +54,7 @@ export default class Menu extends Component {
           </div>
         </div>
         <div className="submenu">
-          <img className="main-img" src="/public/croissant.png"></img>
+          <img className="main-img" src={croissant}></img>
           <h4>Pastries</h4>
           <div className="description">
             <p>All of the pastries and breads at Ambrosia were inspired by traditional recipes and adapted with our bakers’ expertise.</p>
@@ -172,7 +175,7 @@ export default class Menu extends Component {
         </div>
 
         <div className="submenu">
-          <img className="main-img" src="/public/tiramisu.png"></img>
+          <img className="main-img" src={croissant}></img>
           <h4>Deli</h4>
           <div className="description">
             <p>Ambrosia Bakery creates the finest deli sandwiches and salads. We only use the freshest ingredients.</p>
