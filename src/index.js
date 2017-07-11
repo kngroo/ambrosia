@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import { Router, Route, Link, IndexRoute, IndexRedirect, browserHistory } from 'react-router'
 import App from './components/app'
 import About from './views/About/About'
+import Cakes from './views/Cakes/Cakes'
 import Contact from './views/Contact/Contact'
 import Home from './views/Home/Home'
 import Menu from './views/Menu/Menu'
@@ -17,6 +18,7 @@ render((
     <Route path='/' component={App}>
       <IndexRoute component={Home}/>
       <Route path='/menu' components={Menu}/>
+      <Route path='/cakes' components={Cakes}/>
       <Route path='/contact' component={Contact}/>
       <Route path='/about' component={About}/>
     </Route>
