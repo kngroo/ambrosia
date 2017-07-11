@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Navbar from './Navbar/Navbar'
+import 'skeleton-css/css/normalize.css'
+import 'skeleton-css/css/skeleton.css'
 
 require('../styles/app.scss')
 
