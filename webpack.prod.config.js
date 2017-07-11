@@ -39,10 +39,23 @@ module.exports = {
         // include: path.join(__dirname, 'src', 'styles') },
       { test: /\.css?$/,
         loader: 'style!css' },
-      { test: /\.png$/,
-        loader: 'file' },
+      { test: /\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack-loader'
+        ]},
       { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         loader: 'file'}
     ]
+  },
+
+  imageWebpackLoader: {
+    mozjpeg: {
+      quality: 65
+    },
+    pngquant: {
+      quality: '65-90',
+      speed: 4
+    }
   }
 }
