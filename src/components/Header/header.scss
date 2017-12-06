@@ -30,6 +30,14 @@
     font-style: normal;
   }
 
+  .phone {
+    display: block;
+    margin-bottom: 1rem;
+    & > * {
+      text-decoration: none;
+    }
+  }
+
   .address {
     font-size: 1.2rem;
   }

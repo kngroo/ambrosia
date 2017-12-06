@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import cake from '../../static/images/Cake.png'
-
-require('./header.scss')
+import './header.scss'
 
 export default class Header extends Component {
   render() {
@@ -12,8 +11,8 @@ export default class Header extends Component {
           <h1 className="title">Ambrosia Bakery</h1>
         </div>
         <div className="text">
-          <span itemProp="telephone">
-            <a className="phone" href="tel:+14153345305">415-334-5305</a>
+          <span className="phone" itemProp="telephone">
+            <a href="tel:+14153345305">415-334-5305</a>
           </span>
           <address className="address">
             2605 Ocean Avenue<br />

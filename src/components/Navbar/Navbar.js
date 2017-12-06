@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, IndexLink } from 'react-router'
+// import cake from '../../static/images/Cake.png'
 import './navbar.scss'
 
 export default class Navbar extends Component {
@@ -7,6 +8,7 @@ export default class Navbar extends Component {
     return (
       <div id={this.props.id}>
         <nav className="navbar">
+          {/* <span className="logo"><img src={cake} /></span> */}
           <ul className="navbar-list">
             <li className="navbar-item">
               <IndexLink className="navbar-link" to="/" activeClassName="active">Home</IndexLink>

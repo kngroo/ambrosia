@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import fantasia from '../../static/images/cakes/fantasia.png'
-
-require('./home.scss')
+import './home.scss'
 
 export default class Home extends Component {
   constructor(props) {

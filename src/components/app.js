@@ -5,8 +5,7 @@ import Footer from './Footer/Footer'
 import Navbar from './Navbar/Navbar'
 import 'skeleton-css/css/normalize.css'
 import 'skeleton-css/css/skeleton.css'
-
-require('../styles/app.scss')
+import '../styles/app.scss'
 
 export default class App extends Component {
   constructor(props) {
@@ -16,11 +15,17 @@ export default class App extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
 
-    scroller.scrollTo('scrollToEl', {
-      duration: 1000,
-      delay: 100,
+    scroller.scrollTo('scrollToElDesktop', {
+      duration: 1500,
+      delay: 500,
       smooth: "easeInOutQuint",
-      containerId: "scroll-container"
+      offset: 1
+    })
+
+    scroller.scrollTo('scrollToElMobile', {
+      duration: 1500,
+      delay: 500,
+      smooth: "easeInOutQuint"
     })
   }
 
@@ -37,12 +42,14 @@ export default class App extends Component {
 
   render () {
     return (
-      <div id="scroll-container">
+      <div>
         <div className="above-fold">
           <Header/>
+          <div className="scroll-to-desktop"><Element name="scrollToElDesktop" /></div>
           <Navbar id="navbar"/>
         </div>
-        <Element name="scrollToEl"><Navbar id="navbar-fixed"/></Element>
+        <div className="scroll-to-mobile"><Element name="scrollToElMobile" /></div>
+        <Navbar id="navbar-fixed"/>
         <div className="container">{this.props.children}</div>
         <Footer/>
       </div>

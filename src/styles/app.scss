@@ -13,6 +13,14 @@
   text-align: center;
 }
 
+.scroll-to-mobile {
+  display: block;
+}
+
+.scroll-to-desktop {
+  display: none;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {
 
@@ -21,8 +29,15 @@
 /* Larger than phablet */
 @media (min-width: 550px) {
   .above-fold {
-    height: unset;
+    height: 500px;
   }
+  .scroll-to-mobile {
+    display: none;
+  }
+  .scroll-to-desktop {
+    display: block;
+  }
+  
 }
 
 /* Larger than tablet */
