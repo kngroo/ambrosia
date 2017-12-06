@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Element, scroller } from 'react-scroll'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Navbar from './Navbar/Navbar'
@@ -14,6 +15,13 @@ export default class App extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
+
+    scroller.scrollTo('scrollToEl', {
+      duration: 1000,
+      delay: 100,
+      smooth: "easeInOutQuint",
+      containerId: "scroll-container"
+    })
   }
 
   handleScroll() {
@@ -29,10 +37,13 @@ export default class App extends Component {
 
   render () {
     return (
-      <div className="container">
-        <Header/>
-        <Navbar/>
-        {this.props.children}
+      <div id="scroll-container">
+        <div className="above-fold">
+          <Header/>
+          <Navbar id="navbar"/>
+        </div>
+        <Element name="scrollToEl"><Navbar id="navbar-fixed"/></Element>
+        <div className="container">{this.props.children}</div>
         <Footer/>
       </div>
     )

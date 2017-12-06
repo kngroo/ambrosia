@@ -1,9 +1,16 @@
+.above-fold {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  position: relative;
   height: 100%;
   max-width: 100% !important;
+  text-align: center;
 }
 
 /* Larger than mobile */
@@ -13,7 +20,9 @@
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-
+  .above-fold {
+    height: unset;
+  }
 }
 
 /* Larger than tablet */
