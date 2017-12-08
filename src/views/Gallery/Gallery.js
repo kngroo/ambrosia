@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Lightbox from 'react-images'
-import { scroller } from 'react-scroll'
+// import { scroller } from 'react-scroll'
+import cakes from '../../static/images/cakes'
 import './Gallery.scss'
 
 const importAll = paths => 
@@ -9,8 +10,10 @@ const importAll = paths =>
     [image.replace('./', '')]: paths(image)
   }), {})
 
-
-const images = importAll(require.context('../../static/images/cakes', false, /\.(png|jpe?g)$/))
+const images = cakes.map((cake, i) => ({ 
+  src: require(`../../static/images/cakes/${cake.src}`), 
+  caption: cake.name
+}))
 
 export default class Gallery extends Component {
   constructor(props) {
@@ -70,7 +73,7 @@ export default class Gallery extends Component {
       <Lightbox 
           currentImage={currentImage}
           isOpen={isOpen}
-          images={Object.keys(images).map((image, i) => ({src: images[image]}))}
+          images={images}
           onClose={this.close}
           onClickNext={this.next}
           onClickPrev={this.prev}
@@ -78,9 +81,9 @@ export default class Gallery extends Component {
           showThumbnails={true}
         />
       {
-        Object.keys(images).map((image, i) => (
+        images.map((image, i) => (
           <span className="gallery-item" key={i}>
-            <img src={images[image]} onClick={e => this.open(i, e)} />
+            <img src={image.src} onClick={e => this.open(i, e)} />
           </span>
         ))
       }

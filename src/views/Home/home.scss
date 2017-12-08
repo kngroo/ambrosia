@@ -3,27 +3,34 @@
   text-align: center;
 }
 
+.carousel {
+  width: 100%;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+}
+
 .description {
   margin: 0 auto;
   position: relative;
   width: 100%;
 }
 
-.fantasia {
-  margin: 0 auto;
-  position: relative;
-  width: 100% !important;
-  margin-bottom: 2rem;
-  border-radius: 2rem;
+.home-image {
+  width: 100%;
 }
 
 @media (min-width: 550px) {
+  .carousel {
+    margin: 0 auto 2rem;
+    width: 80%;
+  }
+
   .description {
     width: 80%;
   }
   
-  .fantasia {
-    width: 60% !important;
+  .home-image {
+    width: 300px;
   }
 }
 
