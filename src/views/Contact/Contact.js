@@ -48,7 +48,7 @@ export default class Contact extends Component {
         </div>
         <div>
           <h4>Contact</h4>
-          <a href="mailto:ambrosiabakerysf@gmail.com">ambrosiabakerysf@gmail.com</a>
+          <a href="mailto:ambrosia2605@gmail.com">ambrosia2605@gmail.com</a>
         </div>
       </section>
     )

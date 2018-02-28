@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Carousel from 'react-swipe'
-// import fantasia from '../../static/images/cakes/fantasia.png'
-import santabeltprincess from '../../static/images/cakes/santabeltprincess.png'
-import yulelog from '../../static/images/cakes/yulelog.png'
+import fantasia from '../../static/images/cakes/fantasia.png'
 import './home.scss'
 
 export default class Home extends Component {
@@ -23,9 +21,7 @@ export default class Home extends Component {
     return (
       <section className="home-container">
           <Carousel {...carouselOpts}>
-            {/*<img className="fantasia" src={fantasia} />*/}
-            <img className="home-image" src={santabeltprincess} />
-            <img className="home-image" src={yulelog} />
+            <img className="fantasia" src={fantasia} />
           </Carousel>
         <div className="description">
           <p>We are a bright and community-oriented bakery located in the Lakeside neighborhood of San Francisco.</p>
