@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
-
-require('./contact.scss')
+import { scroller } from 'react-scroll'
+import './contact.scss'
 
 export default class Contact extends Component {
   constructor(props) {
     super(props)
+  }
+
+  componentDidMount() {
+    // scroller.scrollTo('scrollToEl', {
+    //   duration: 1000,
+    //   delay: 100,
+    //   smooth: true
+    // })
   }
 
   render() {
@@ -37,6 +45,10 @@ export default class Contact extends Component {
               <p>Labor Day</p>
             </div>
           </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:ambrosia2605@gmail.com">ambrosia2605@gmail.com</a>
         </div>
       </section>
     )

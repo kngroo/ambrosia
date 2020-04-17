@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
+import { Element, scroller } from 'react-scroll'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Navbar from './Navbar/Navbar'
 import 'skeleton-css/css/normalize.css'
 import 'skeleton-css/css/skeleton.css'
-
-require('../styles/app.scss')
+import '../styles/app.scss'
 
 export default class App extends Component {
   constructor(props) {
@@ -14,6 +14,19 @@ export default class App extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
+
+    scroller.scrollTo('scrollToElDesktop', {
+      duration: 1500,
+      delay: 500,
+      smooth: "easeInOutQuint",
+      offset: 1
+    })
+
+    scroller.scrollTo('scrollToElMobile', {
+      duration: 1500,
+      delay: 500,
+      smooth: "easeInOutQuint"
+    })
   }
 
   handleScroll() {
@@ -29,10 +42,15 @@ export default class App extends Component {
 
   render () {
     return (
-      <div className="container">
-        <Header/>
-        <Navbar/>
-        {this.props.children}
+      <div>
+        <div className="above-fold">
+          <Header/>
+          <div className="scroll-to-desktop"><Element name="scrollToElDesktop" /></div>
+          <Navbar id="navbar"/>
+        </div>
+        <div className="scroll-to-mobile"><Element name="scrollToElMobile" /></div>
+        <Navbar id="navbar-fixed"/>
+        <div className="container">{this.props.children}</div>
         <Footer/>
       </div>
     )

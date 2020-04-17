@@ -1,18 +1,49 @@
 .header {
-  margin-top: 8rem;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 2rem auto;
+  position: relative;
   text-align: center;
-}
+  width: 100%;
 
-.cake {
-  width: 30%;
-}
+  .logo {
+    margin: 1rem;
+    img {
+      user-select: none;
+      width: 50%;  
+      max-width: 150px;
+    }
 
-.phone {
-  text-decoration: none;
-}
+    .title {
+      margin: 0;
+    }
+  }
+  
+  .text > * {
+    text-align: center;
+  }
+  
+  .phone, .address {
+    text-decoration: none;
+    font-style: normal;
+  }
 
-.fb-like-button {
-  display: block;
-  margin: 1rem;
+  .phone {
+    display: block;
+    margin-bottom: 1rem;
+    & > * {
+      text-decoration: none;
+    }
+  }
+
+  .address {
+    font-size: 1.2rem;
+  }
+  
+  .fb-like-button {
+    display: block;
+    margin: 1rem;
+  }
 }

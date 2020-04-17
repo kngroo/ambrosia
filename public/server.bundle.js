@@ -142,7 +142,7 @@
 	    // include: path.join(__dirname, 'src', 'styles') },
 	    { test: /\.css?$/,
 	      loader: 'style!css' }, { test: /\.(gif|png|jpe?g|svg)$/i,
-	      loaders: ['file-loader?hash=sha512&digest=hex&name=[hash].[ext]', 'image-webpack-loader']
+	      loaders: ['file-loader?hash=sha512&digest=hex&name=[hash].[ext]', 'image-webpack-loader?bypassOnDebug']
 	    }, { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
 	      loader: 'file' }]
 	  },

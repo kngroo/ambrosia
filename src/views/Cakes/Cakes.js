@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { scroller } from 'react-scroll'
 import Cake from '../../components/Cake/Cake.js'
 import assets from './assets.js'
 import './cakes.scss'
@@ -6,6 +7,14 @@ import './cakes.scss'
 export default class Cakes extends Component {
   constructor(props) {
     super(props)
+  }
+
+  componentDidMount() {
+    // scroller.scrollTo('scrollToEl', {
+    //   duration: 1000,
+    //   delay: 100,
+    //   smooth: true
+    // })
   }
 
   render() {

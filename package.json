@@ -1,15 +1,19 @@
 {
   "name": "ambrosia-bakery-sf",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "web page for Ambrosia Bakery in San Francisco",
   "main": "./app.js",
   "homepage": "http://ambrosiabakerysf.com",
   "author": "Josh Kang",
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:client && npm run build:server",
+    "build": "yarn run build:client && yarn run build:server",
     "build:client": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
     "build:server": "NODE_ENV=production webpack --config ./webpack.server.config.js --progress --colors",
+    "heroku-postbuild": "",
     "start": "node app.js",
     "start:prod": "NODE_ENV=production node app.js"
   },
@@ -28,9 +32,13 @@
     "express": "^4.13.4",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
+    "react-images": "^0.5.13",
     "react-router": "^2.8.1",
+    "react-scroll": "^1.7.3",
+    "react-swipe": "^5.1.0",
     "skeleton-css": "^2.0.4",
-    "skeleton-css-webpack": "^2.0.4"
+    "skeleton-css-webpack": "^2.0.4",
+    "swipe-js-iso": "^2.0.4"
   },
   "devDependencies": {
     "babel": "^6.5.2",

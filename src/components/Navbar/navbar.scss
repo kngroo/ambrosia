@@ -1,31 +1,56 @@
 #navbar {
-  height: 7rem;
+  position: relative;
+}
+
+#navbar-fixed {
+  z-index: 1;
+  position: fixed;
+  visibility: hidden;
+  bottom: -130px;
+  width: 100%;
+
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
 .navbar {
   display: block;
-  position: absolute;
-  left: 0;
-  width: 100%;
+  position: relative;
   background: #fff;
-  z-index: 99;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  // border-top: 1px solid #eee;
+  // border-bottom: 1px solid #eee;
+  width: 100%;
+}
 
-  .container {
-    width: 100%;
+.navbar .logo {
+  img {
+    width: 20px;
+    height: 20px;
   }
 }
 
 .navbar-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
-  margin-bottom: 0;
+  margin: auto 2rem;
 }
 
 .navbar-item {
   position: relative;
   float: left;
   margin-bottom: 0;
+  user-select: none;
+
+  .active {
+    color: pink;
+  }
+
+  .active::after {
+    content: "";
+    background-image: url('../../static/images/Cake.png')
+  }
 }
 
 .navbar-link {
@@ -37,32 +62,35 @@
   text-decoration: none;
   line-height: 6.5rem;
   color: #222;
-}
 
-.has-docked-nav .navbar-spacer {
-  display: block;
-  width: 100%;
-  height: 6.5rem;
-  background: #fff;
-  z-index: 99;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-
-.has-docked-nav .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  .container {
-    width: 100%;
+  &:hover {
+    color: pink;
   }
 }
 
+.has-docked-nav #navbar-fixed {
+  visibility: visible;
+  bottom: 0;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  border-top: 1px solid #eee;
+}
+
 @media (min-width: 550px) {
-  .has-docked-nav .navbar {
-    .container {
-      width: 80%;
-    }
+  #navbar-fixed {
+    bottom: unset;
+    top: -130px;
+    transition-duration: unset;
+    transition-timing-function: unset;
+  }
+
+  .has-docked-nav #navbar-fixed {
+    top: 0;
+    bottom: unset;
+    border-bottom: 1px solid #eee;
+    border-top: unset;
+    transition-duration: unset;
+    transition-timing-function: unset;
   }
 }
 

@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-import croissant from '../../static/images/cakes/croissant.png'
+import scroller from 'react-scroll'
+import croissant from '../../static/images/pastries/croissant.png'
 import tiramisu from '../../static/images/cakes/tiramisu.png'
-
-
-require('./menu.scss')
+import './menu.scss'
 
 export default class Menu extends Component {
   constructor(props) {
     super(props)
+  }
+
+  componentDidMount() {
+    // scroller.scrollTo('scrollToEl', {
+    //   duration: 0,
+    //   delay: 0,
+    //   smooth: false
+    // })
   }
 
   render() {
@@ -174,7 +181,7 @@ export default class Menu extends Component {
           </div>
         </div>
 
-        <div className="submenu">
+        {/* <div className="submenu">
           <img className="main-img" src={croissant}></img>
           <h4>Deli</h4>
           <div className="description">
@@ -232,7 +239,7 @@ export default class Menu extends Component {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     )
   }
