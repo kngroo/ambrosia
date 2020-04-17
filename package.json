@@ -1,6 +1,9 @@
 {
   "name": "ambrosia-bakery-sf",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "web page for Ambrosia Bakery in San Francisco",
   "main": "./app.js",
   "homepage": "http://ambrosiabakerysf.com",
@@ -10,6 +13,7 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
     "build:server": "NODE_ENV=production webpack --config ./webpack.server.config.js --progress --colors",
+    "heroku-postbuild": "",
     "start": "node app.js",
     "start:prod": "NODE_ENV=production node app.js"
   },
