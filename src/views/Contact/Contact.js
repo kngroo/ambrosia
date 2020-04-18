@@ -8,7 +8,7 @@ export default class Contact extends Component {
         <div className="map-container">
           <iframe className="map" width="100%" height="500px" frameBorder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyASUj0jxU59Q3jOFVRk5-X_KGCrYqGC2TI&q=Ambrosia+Bakery,San+Francisco,CA" allowFullScreen></iframe>
         </div>
-        <div className="temporary-hours">
+        <div className="temporary-hours" id="temporary-hours">
           <h4>Temporary Hours</h4>
           <div className="row">
             <p className="columns six">Mon-Sat: 7am - 3pm</p>
