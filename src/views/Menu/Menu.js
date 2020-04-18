@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import scroller from 'react-scroll'
 import croissant from '../../static/images/pastries/croissant.png'
 import tiramisu from '../../static/images/cakes/tiramisu.png'
 import './menu.scss'
@@ -7,14 +6,6 @@ import './menu.scss'
 export default class Menu extends Component {
   constructor(props) {
     super(props)
-  }
-
-  componentDidMount() {
-    // scroller.scrollTo('scrollToEl', {
-    //   duration: 0,
-    //   delay: 0,
-    //   smooth: false
-    // })
   }
 
   render() {
