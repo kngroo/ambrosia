@@ -1,24 +1,13 @@
 #navbar {
-  position: relative;
-}
-
-#navbar-fixed {
+  position: sticky;
+  top: 0;
   z-index: 1;
-  position: fixed;
-  visibility: hidden;
-  bottom: -130px;
-  width: 100%;
-
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
 .navbar {
   display: block;
   position: relative;
   background: #fff;
-  // border-top: 1px solid #eee;
-  // border-bottom: 1px solid #eee;
   width: 100%;
 }
 

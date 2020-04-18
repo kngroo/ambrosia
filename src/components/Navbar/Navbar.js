@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link, IndexLink } from 'react-router'
-// import cake from '../../static/images/Cake.png'
 import './navbar.scss'
 
 export default class Navbar extends Component {
@@ -8,7 +7,6 @@ export default class Navbar extends Component {
     return (
       <div id={this.props.id}>
         <nav className="navbar">
-          {/* <span className="logo"><img src={cake} /></span> */}
           <ul className="navbar-list">
             <li className="navbar-item">
               <IndexLink className="navbar-link" to="/" activeClassName="active">Home</IndexLink>
@@ -25,12 +23,12 @@ export default class Navbar extends Component {
             <li className="navbar-item">
               <Link className="navbar-link" to="/contact" activeClassName="active">Contact</Link>
             </li>
-            {/* <li className="navbar-item">
-              <Link className="navbar-link" to="/about" activeClassName="active">About</Link>
-            </li> */}
+            <li className="navbar-item">
+              <Link className="navbar-link" to="/our-story" activeClassName="active">Our Story</Link>
+            </li>
           </ul>
         </nav>
-      </div>    
+      </div>
     )
   }
 }

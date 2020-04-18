@@ -24,13 +24,14 @@ export default class Home extends Component {
             <img className="fantasia" src={fantasia} />
           </Carousel>
         <div className="description">
-          <p>We are a bright and community-oriented bakery located in the Lakeside neighborhood of San Francisco.</p>
-          <p>We've been serving our loyal customers since 1988. The aroma of fresh-baked bread has delighted our neighborhood and the many passers-by for almost 30 years. We invite you to step in and enjoy our unique taste.</p>
-          <p>We serve French pastries, cookies, cakes for all occasions, deli sandwiches and have a wonderful coffee bar. You’ll be sure to find something to satisfy your hunger pangs or sweet tooth! Seating is available.</p>
-          <p>Ambrosia Bakery creates the finest pastries and breads daily. Pick up some delicious goodies for your next office meeting, dinner party, holiday celebration or just because you deserve it!</p>
-          <p>We look forward to seeing you!</p>
+          <h4>About us</h4>
+          <p>Ambrosia was established in 1988 to provide a bright and welcoming gathering place serving fine baked goods to our local community in the Lakeside neighborhood of San Francisco.</p>
+          <p>For more than 30 years, the aroma of fresh-baked breads and pastries has delighted our neighborhood, loyal customers and passersby every day. We offer French pastries, cookies, cakes, deli sandwiches and a full-service coffee bar.</p>
+          <p>We bake with the freshest ingredients and no preservatives, so you can feel confident picking up some treats for your next meeting, dinner party, holiday celebration or just because.</p>
+          <p>Seating is available inside -- we invite you to come in and enjoy our unique taste and warm atmosphere.</p>
+          <p>We hope to see you soon!</p>
         </div>
-      </section> 
+      </section>
     )
   }
 }

@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import Lightbox from 'react-images'
-// import { scroller } from 'react-scroll'
 import cakes from '../../static/images/cakes'
 import './Gallery.scss'
 
-const importAll = paths => 
+const importAll = paths =>
   paths.keys().reduce( (images, image) => ({
     ...images,
     [image.replace('./', '')]: paths(image)
   }), {})
 
-const images = cakes.map((cake, i) => ({ 
-  src: require(`../../static/images/cakes/${cake.src}`), 
+const images = cakes.map((cake, i) => ({
+  src: require(`../../static/images/cakes/${cake.src}`),
   caption: cake.name
 }))
 
@@ -23,14 +22,6 @@ export default class Gallery extends Component {
       isOpen: false,
       currentImage: 0
     }
-  }
-
-  componentDidMount() {
-    // scroller.scrollTo('scrollToEl', {
-    //   duration: 1000,
-    //   delay: 100,
-    //   smooth: true
-    // })
   }
 
   close = () => {
@@ -70,7 +61,7 @@ export default class Gallery extends Component {
 
     return (
       <div className="gallery-container">
-      <Lightbox 
+      <Lightbox
           currentImage={currentImage}
           isOpen={isOpen}
           images={images}
