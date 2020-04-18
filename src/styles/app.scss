@@ -5,19 +5,24 @@
   justify-content: space-between;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.app {
+  position: relative;
+  height: 100%;
+  overflow: scroll;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   height: 100%;
   text-align: center;
-}
-
-.scroll-to-mobile {
-  display: block;
-}
-
-.scroll-to-desktop {
-  display: none;
 }
 
 /* Larger than mobile */
@@ -36,7 +41,6 @@
   .scroll-to-desktop {
     display: block;
   }
-  
 }
 
 /* Larger than tablet */
@@ -54,3 +58,14 @@
 
 }
 
+.covid-notice {
+  position: relative;
+  background-color: #cae2ea;
+  padding: 20px;
+  width: 100%;
+
+  & > p {
+    margin: 0 auto;
+    text-align: left;
+  }
+}

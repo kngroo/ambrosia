@@ -23,7 +23,7 @@ export default class Header extends Component {
         <span className="fb-like-button">
           <div className="fb-like" data-href="https://www.facebook.com/ambrosiabakerysf" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </span>
-      </header>    
+      </header>
     )
   }
 }
