@@ -1,21 +1,6 @@
-.above-fold {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  height: 100vh;
-}
-
 .app {
   position: relative;
   height: 100%;
-  overflow: scroll;
 }
 
 .container {
@@ -25,61 +10,12 @@
   text-align: center;
 }
 
-/* Larger than mobile */
-@media (min-width: 400px) {
-
-}
-
-/* Larger than phablet */
-@media (min-width: 550px) {
-  .above-fold {
-    height: 500px;
-  }
-  .scroll-to-mobile {
-    display: none;
-  }
-  .scroll-to-desktop {
-    display: block;
-  }
-}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {
-
-}
-
-/* Larger than desktop hd */
-@media (min-width: 1200px) {
-
-}
-
 .covid-notice {
   position: relative;
   background-color: #cae2ea;
   padding: 20px;
-  width: 100%;
 
-  & > .container {
-    margin: 0 auto;
-  }
-
-  & > p {
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  & > span {
-    display: inline-block;
-    transform: translateX(-50%);
-    left: 50%;
-  }
-
-  .temporary-hours-link {
-    display: inline-block;
+  & > div {
+    display: block;
   }
 }
