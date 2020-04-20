@@ -18,4 +18,12 @@
   margin: 20px auto;
   padding: 20px;
   background-color: #cae2ea;
+
+  &::before {
+    content: '';
+    display: block;
+    visibility: hidden;
+    margin-top: -150px;
+    height: 150px;
+  }
 }

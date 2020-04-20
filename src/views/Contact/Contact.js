@@ -1,15 +1,40 @@
-import React, { Component } from 'react'
-import './contact.scss'
+import React, { Component } from 'react';
+import './contact.scss';
 
 export default class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.temporaryHoursRef = null;
+  }
+
+  componentDidMount() {
+    if (this.props.location.hash === '#temporary-hours') {
+      this.temporaryHoursRef.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }
+  }
+
   render() {
     return (
       <section className="contact-container">
         <div className="map-container">
-          <iframe className="map" width="100%" height="500px" frameBorder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyASUj0jxU59Q3jOFVRk5-X_KGCrYqGC2TI&q=Ambrosia+Bakery,San+Francisco,CA" allowFullScreen></iframe>
+          <iframe
+            className="map"
+            width="100%"
+            height="500px"
+            frameBorder="0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyASUj0jxU59Q3jOFVRk5-X_KGCrYqGC2TI&q=Ambrosia+Bakery,San+Francisco,CA"
+            allowFullScreen
+          ></iframe>
         </div>
-        <div className="temporary-hours" id="temporary-hours">
-          <h4>Temporary Hours</h4>
+        <div
+          className="temporary-hours"
+          id="temporary-hours"
+          ref={(el) => (this.temporaryHoursRef = el)}
+        >
+          <h4>⚠️ Temporary Hours</h4>
           <div className="row">
             <p className="columns six">Mon-Sat: 7am - 3pm</p>
             <p className="columns six">Sun: Closed</p>
@@ -45,6 +70,6 @@ export default class Contact extends Component {
           <a href="mailto:ambrosia2605@gmail.com">ambrosia2605@gmail.com</a>
         </div>
       </section>
-    )
+    );
   }
 }
