@@ -1,1 +1,1 @@
-web: npm start
+web: cd next/ambrosiabakerysf && yarn run start
