@@ -73,7 +73,7 @@ const cakes = [
 ];
 
 const images = cakes.map((cake, i) => ({
-  src: `/images/cakes/${cake.src}`,
+  src: require(`public/images/cakes/${cake.src}?webp`),
   caption: cake.name,
 }));
 

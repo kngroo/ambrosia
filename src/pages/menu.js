@@ -3,7 +3,7 @@ import React from 'react';
 const Menu = () => (
   <section className="menu-container">
     <div className="submenu">
-      <img className="main-img" src="/images/cakes/tiramisu.png"></img>
+      <img className="main-img" src={require('public/images/cakes/tiramisu.png?webp')}></img>
       <h4>Cakes</h4>
       <div className="description">
         <p>
@@ -48,7 +48,7 @@ const Menu = () => (
       </div>
     </div>
     <div className="submenu">
-      <img className="main-img" src="/images/pastries/croissant.png"></img>
+      <img className="main-img" src={require("public/images/pastries/croissant.png?webp")}></img>
       <h4>Pastries</h4>
       <div className="description">
         <p>

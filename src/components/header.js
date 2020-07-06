@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => (
   <header className="header">
     <div className="logo">
-      <img src="/images/Cake.png" alt="logo" />
+      <img src={require("public/images/Cake.png?webp")} alt="logo" />
       <h1 className="title">Ambrosia Bakery</h1>
     </div>
     <div className="text">
