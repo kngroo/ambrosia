@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => (
   <section className="home-container">
-    <img src="/images/cakes/fantasia.png" />
+    <img src={require("public/images/cakes/fantasia.png?webp")} />
     <div className="description">
       <p>
         Ambrosia was established in 1988 to provide a bright and welcoming
