@@ -75,7 +75,7 @@ const cakes = [
 
 const images = cakes.map((cake, i) => ({
   fileName: `cakes/${cake.src}`,
-  src: require(`public/images/cakes/${cake.src}?webp`),
+  src: require(`public/images/cakes/${cake.src}`),
   caption: cake.name,
 }));
 
