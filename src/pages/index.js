@@ -1,8 +1,9 @@
 import React from 'react';
+import Image from 'src/components/image';
 
 const Home = () => (
   <section className="home-container">
-    <img src={require("public/images/cakes/fantasia.png?webp")} />
+    <Image src="cakes/fantasia.png" />
     <div className="description">
       <p>
         Ambrosia was established in 1988 to provide a bright and welcoming
@@ -44,14 +45,14 @@ const Home = () => (
           width: 100%;
         }
 
-        img {
+        .home-container :global(img) {
           width: 100%;
           border-radius: 2rem;
           margin-bottom: 2rem;
         }
 
         @media (min-width: 550px) {
-          img {
+          .home-container :global(img) {
             margin: 0 auto 2rem;
             width: 80%;
           }

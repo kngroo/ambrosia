@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from 'src/components/image';
 
 const Header = () => (
   <header className="header">
     <div className="logo">
-      <img src={require("public/images/Cake.png?webp")} alt="logo" />
+      <Image src="Cake.png" alt="logo" />
       <h1 className="title">Ambrosia Bakery</h1>
     </div>
     <div className="text">
@@ -44,7 +45,7 @@ const Header = () => (
         margin: 1rem;
       }
 
-      .logo > img {
+      .logo :global(img) {
         user-select: none;
         width: 50%;
         max-width: 150px;
