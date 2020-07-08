@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from 'src/components/image';
 
 const Menu = () => (
   <section className="menu-container">
     <div className="submenu">
-      <img className="main-img" src={require('public/images/cakes/tiramisu.png?webp')}></img>
+      <Image src="cakes/tiramisu.png" />
       <h4>Cakes</h4>
       <div className="description">
         <p>
@@ -48,7 +49,7 @@ const Menu = () => (
       </div>
     </div>
     <div className="submenu">
-      <img className="main-img" src={require("public/images/pastries/croissant.png?webp")}></img>
+      <Image src="pastries/croissant.png" />
       <h4>Pastries</h4>
       <div className="description">
         <p>
@@ -199,7 +200,7 @@ const Menu = () => (
           margin-left: 1rem;
         }
 
-        .main-img {
+        .menu-container :global(img) {
           max-width: 150px;
           border-radius: 15rem;
         }
@@ -228,7 +229,7 @@ const Menu = () => (
             text-align: center;
           }
 
-          .main-img {
+          .menu-container :global(img) {
             max-width: 250px;
           }
         }

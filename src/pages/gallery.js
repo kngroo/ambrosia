@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Lightbox from 'react-images';
+import Image from 'src/components/image';
 
 const cakes = [
   {
@@ -73,7 +74,8 @@ const cakes = [
 ];
 
 const images = cakes.map((cake, i) => ({
-  src: require(`public/images/cakes/${cake.src}?webp`),
+  fileName: `cakes/${cake.src}`,
+  src: require(`public/images/cakes/${cake.src}`),
   caption: cake.name,
 }));
 
@@ -135,8 +137,8 @@ export default class Gallery extends Component {
           showThumbnails={true}
         />
         {images.map((image, i) => (
-          <span className="gallery-item" key={i}>
-            <img src={image.src} onClick={(e) => this.open(i, e)} />
+          <span className="gallery-item" key={i} onClick={(e) => this.open(i, e)}>
+            <Image src={image.fileName} alt={image.caption} />
           </span>
         ))}
         <style jsx>{`
@@ -155,7 +157,7 @@ export default class Gallery extends Component {
             margin-bottom: 2rem;
           }
 
-          .gallery-container .gallery-item img {
+          .gallery-container .gallery-item :global(img) {
             border-radius: 6px;
             display: block;
             width: 100%;

@@ -1,10 +1,18 @@
 import React from 'react';
 import useSWR from 'swr';
+import { fetchHours } from './api/yelp';
+
+export async function getStaticProps() {
+  const hours = await fetchHours().catch((err) => undefined);
+  return { props: { hours } };
+}
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const Contact = () => {
-  const { data, error } = useSWR('/api/yelp', fetcher);
+const Contact = (props) => {
+  const { data, error } = useSWR('/api/yelp', fetcher, {
+    initialData: { hours: props.hours },
+  });
 
   return (
     <section className="contact-container">
@@ -21,8 +29,19 @@ const Contact = () => {
       <div>
         <h4>Hours</h4>
         <div className="row">
-        {data?.hours?.map(({day, start, end}) => <p className="four columns">{`${day}: ${start} - ${end}`}</p>)}
-        {error && <a href="https://www.yelp.com/biz/ambrosia-bakery-san-francisco">Check hours on Yelp</a>}
+          {data?.hours?.map(({ day, start, end }, i) => (
+            <p
+              className="four columns"
+              key={i}
+            >{`${day}: ${start} - ${end}`}</p>
+          ))}
+          {(error || !data?.hours) && (
+            <p className="twelve columns">
+              <a href="https://www.yelp.com/biz/ambrosia-bakery-san-francisco">
+                Check hours on Yelp
+              </a>
+            </p>
+          )}
         </div>
       </div>
       <div>
@@ -54,7 +73,7 @@ const Contact = () => {
           }
 
           .map {
-            background-image: url('/public/spinner.gif');
+            background-image: url(${require('public/images/Cake.png')});
             background-size: 50px 50px;
             background-repeat: no-repeat;
             background-position-x: 50%;
