@@ -31,7 +31,7 @@ const formatHours = ({ day, start, end }) => {
   };
 };
 
-export default async (req, res) => {
+export async function fetchHours() {
   const query = gql`
     {
       business(id: "ambrosia-bakery-san-francisco") {
@@ -62,7 +62,6 @@ export default async (req, res) => {
   `;
 
   const { data } = await client.query({ query }).catch((err) => {
-    res.status(400).json(err);
     throw err;
   });
 
@@ -83,5 +82,13 @@ export default async (req, res) => {
       return acc;
     }, []);
 
+  return hours;
+}
+
+export default async (req, res) => {
+  const hours = await fetchHours().catch((err) => {
+    res.status(400).end();
+    throw err;
+  });
   res.status(200).json({ hours });
 };
